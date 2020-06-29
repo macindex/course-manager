@@ -1,0 +1,64 @@
+CRIANDO APLICAÇÃO
+
+- Baixando através do comando: ng new course-manager
+
+- Arquitetura de aplicação Angular
+
+º Arquivo package.json
+(Contém as dependencias da aplicação)
+
+º scripts
+
+º Angular.json
+(Define funções de inicialização da aplicação, Contém variáveis globais da aplicação)
+
+º Assets
+(Contém as imagens e arquivos estáticas de toda aplicação)
+
+º Index/ main
+(SPA - toda aplicação  esta envelopada em um único componente. MAIN.ts - inicializa a aplicação)
+
+º NODE_modules
+(agrupa todas dependencias)
+
+º src
+main.ts - realiza a inicialização de toda aplicação
+
+
+comando:
+
+- ng server
+
+porta 4200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

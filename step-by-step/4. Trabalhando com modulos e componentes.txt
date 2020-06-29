@@ -1,0 +1,123 @@
+
+
+Módulo - limitador de contexto cujo todos os componentes que venham a ter dentro dele correspondem ao contexto.
+
+Componentes - o que será visual no módulo
+
+
+app.components.ts
+selector - diretiva que irá virar uma tag html, se encontra no index.html <app-root>
+
+templateUrl - será o html que será utilizado
+
+title
+
+-
+React fortace JS
+-
+
+Angular fortalece HTML
+
+importar modulo para aplicação
+
+app.module.ts
+
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+importar tmbm na parte de imports
+
+imports{
+  FormsModule
+}
+
+
+diminui o tamanho da aplicação
+
+
+<!--one way data bind - exibe-->
+[ ]
+Só faz exibir
+Ligação de única via
+
+
+<!--two way data bind e exibe e reflete-->
+Ligação de duas vias
+[( )]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

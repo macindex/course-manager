@@ -1,0 +1,65 @@
+REQUISITOS BÁSICOS
+
+- HTML BÁSICO
+
+- JS BÁSICO
+
+
+º Instalou NODE
+
+º Instalou NPM
+
+º Instalou ANGULAR/CLI
+
+Angular CLI agilizar no gerencimento da aplicação do angular, criar projeto, configurar componentes, configurar rotas,  criar guards, util na produtividade.
+
+-
+npm install -g @angular/cli
+-
+-
+ng version
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
