@@ -2,6 +2,9 @@ criado pasta courses
 
 criar componentes nesta pasta
 
+Decorator - @Component
+
+
 courselist.component.ts
 
 
@@ -17,12 +20,34 @@ courselist.component.ts
 
 
 
-
+-
 npm install bootstrap
+-
 
-tornar ele global para a aplicação
 
+
+tornar ele global para a aplicação - ~bootstrap/dist/css/bootstrap.min.css'
+
+~ Significa que ele vai ficar na raiz do projeto
+
+
+*ngFor - Poder dado ao html para iterar sobre os recursos angular
+
+<td>{{ course.imageUrl }}</td>
+
+
+Options - será responsável por editar, exluir...
+
+
+classe tipada e criada no ang course.ts
+
+estyle.css importa os atributos do bootstrap
+
+- - - - - - - - - - - - - - - - - - - - 
 O arquivo angular.json declara o arquivo que será global para todos os componentes
+- - - - - - - - - - - - - - - - - - - - 
+
+
 
 
 
