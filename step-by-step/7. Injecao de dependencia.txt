@@ -1,0 +1,26 @@
+criar arquivo dentro de dir "courses"
+
+course.service.ts
+
+
+classe de serviço
+
+export class CourseService{
+
+}
+
+
+---------------------------------------------
+https://github.com/wesllhey/course-manager
+---------------------------------------------
+
+Após inserir o array dentro de course.ts inserir
+description: string; abaixo de releaseDate: string;
+
+provideIn 'root' classe estará elegível para será carregado 
+
+Método para 
+
+Classe de serviço são métodos que chamem outra operação.
+
+A injeção de dependencia será realizada através do construtor 

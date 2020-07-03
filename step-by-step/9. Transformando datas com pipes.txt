@@ -1,0 +1,68 @@
+Pipes - Alterar a exibição do template
+
+
+course-list.componente.html
+
+<td>{{ course.releaseDate }}</td>
+
+passa a ser:
+
+<td>{{ course.releaseDate | date: 'dd/MM/yyyy' }}</td>
+
+
+agora em code do produto
+
+<td>{{ course.code }}</td>
+
+passa a ser:
+
+
+<td>{{ course.code | lowercase }}</td>
+
+
+            
+Podem ser concatenados vários pipes
+
+
+criado dir "pipe" dentro de App e replace.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+	name: 'replace'
+})
+
+export class ReplacePipe implements PipeTransform{
+
+	transform(value: string, char: string, valueToReplace: string){
+	return value.replace(char, valueToReplace);
+	
+	}
+
+}
+
+agora passamos dentro do course-list o replace após o pipe
+
+
+<td>{{ course.code | lowercase | replace: '-': ' ' }}</td>
+
+e passamos o caractere que será substituido e o valor que irá substituir este caractere
+
+
+
+
+Após esta criação é necessário declarar na inicialização da aplicação app.module.ts o replace
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

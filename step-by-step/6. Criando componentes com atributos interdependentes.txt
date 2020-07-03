@@ -1,0 +1,94 @@
+Aqui será criado um componente dentro de outro componente e passando um atributo para que ele possa fazer o que diz respeito.
+
+
+
+Criará um componente no Rating que recebe a informação recebida por ele e exibe as estrelas corretas.
+
+
+
+baixado imagens do projeto, inseridas no dir images e chamadas dentro de 'course-list.component.ts'
+
+
+desta forma passamos a url literal
+
+
+quando queremos pegar alguma informação ou variável do ang e passar para um atributo html devemos colocar o atributo entre []
+
+então este: 
+<td>{{ course.imageUrl }}</td>
+
+se transforma neste
+
+<td>img [src]='course.imageUrl'</td>
+
+criado no dir dentro de app "star"
+
+
+Nesta classe 
+
+export class StarComponent{
+    
+}
+
+
+
+Não será utilizado o onInit 
+
+
+e sim o OnChanges
+
+Metodo ngOnchange
+
+Quando quero criar uma variável e deixar ela disponível para outro componente externo.
+
+@Input
+
+
+
+instalar modulo de layout
+
+npm i font-awesome - Já vem com layout de estralas
+
+dentro do syles.css será exportado de forma global
+
+
+depois de criado o StarComponent é necessário importar ele no app.module
+
+
+quando realizamos 'npm i font-awesome' ele vai ser instalado dentro do node_modules
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

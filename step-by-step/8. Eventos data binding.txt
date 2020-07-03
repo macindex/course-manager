@@ -1,0 +1,58 @@
+Two way databind
+
+________________________________
+course-list.component.html
+________________________________
+
+<div "class="form-group row"
+	<label class="col-sm-2 col-form-label">Filter By:</label>
+
+</div>
+
+<div lass="col-sm-10">
+	<input [(ngModel)]="filter" class="form-control"></div>
+
+
+
+
+dentro do course-list.component.ts
+
+
+será iniciado o filtro
+
+
+filteredCoursees: Course[] = [];
+_couses: Course[] = [];
+_filteredBy: string;
+
+
+constructor...
+ngOnInit...
+
+this._courses...
+this.filteredCourses = this._courses;
+
+
+set filter(value: string){
+	this._filterBy = value;
+
+	this.filteredCourses = this._courses.filter((course: Course) => course.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1);
+}
+
+get filter(){
+	return this._filterBy;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
