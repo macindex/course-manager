@@ -1,0 +1,77 @@
+Rotas
+
+criar component navbar 
+
+em app criar dir nav-bar
+
+dentro criar: nav-bar.component.ts
+
+import { Component } from "angular/core;
+
+@Component({
+	selector: 'app-nav-bar',
+	templateUrl: './nav-bar.component.html'
+})
+export class NavBarComponent{
+
+}
+
+criado template: nav-bar.component.html e passar  dentro de templateUrl
+
+
+nav-bar.component.html 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href='#' class="navbar-brand">Course Manager</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href='#' class="nav-link">Courses</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+declarar este dentro do app.component.html
+
+
+<app-nav-bar></app-nav-bar>
+<div class='container mt4'>
+
+- caso seja realizado a execução aqui dará erro por não ter sido declarado no app module
+
+Logo abaixo do ReplacePipe
+NavBarComponent
+
+Após isso criar primeira rota
+
+dentro do app.module.ts
+será importado import { RouterModule } from '@angular/router';
+
+
+imports:[
+	RouterModule.forRoot([
+	{
+	path: '', redirectTo: 'courses', pathMatch: 'full' //será passado vazio
+	},
+	{
+	path: 'courses', component: CourseListComponent
+	}
+		
+]) //Espera um array de rotas
+
+
+dentro de course-list.component.ts será excluido o selector: app-course-list
+
+
+dentro de app-component.html será excluido o <app-course-list></app-course-list>
+
+
+
+
