@@ -1,6 +1,6 @@
 Rotas
 
-criar component navbar 
+"criar component navbar"
 
 em app criar dir nav-bar
 
