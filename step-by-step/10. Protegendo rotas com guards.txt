@@ -38,7 +38,7 @@ nav-bar.component.html
     </div>
 </nav>
 
-declarar este dentro do app.component.html
+Agora devemos declarar este dentro do app.component.html
 
 
 <app-nav-bar></app-nav-bar>
@@ -49,7 +49,7 @@ declarar este dentro do app.component.html
 Logo abaixo do ReplacePipe
 NavBarComponent
 
-Após isso criar primeira rota
+Após isso, criaamos a primeira rota
 
 dentro do app.module.ts
 será importado import { RouterModule } from '@angular/router';
@@ -72,6 +72,24 @@ dentro de course-list.component.ts será excluido o selector: app-course-list
 
 dentro de app-component.html será excluido o <app-course-list></app-course-list>
 
+Pois não faz mais sentido utilizar select, estamos agora utilizando rotas
 
 
+Agora é necessário informar onde o angular irá fazer o switch
 
+em: app.component.html
+
+será inserido: <router-outlet></router-outlet>
+
+Agora será criado em app.module.ts
+
+{
+	path: '**', component
+} 
+
+criado em app dir error-404 e file 404.component.ts
+
+export class Error404component{
+}
+
+em componentes de rotas não precisa de selector

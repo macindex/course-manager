@@ -1,0 +1,81 @@
+Ativar uma rota através de um link e de um componente
+
+em: course-list.component.html
+
+será inserido no ultimo <td> <a[routerLink]="['/courses/info',course.id ]" class="btn-primary">Edit</a></td>
+
+
+
+
+No dir courses será criado file: course-info.component.ts
+
+
+@Component({
+	templateUrl: './course-info.component.html'
+
+})
+
+
+export class CouseInfoComponent{
+
+
+}
+
+criar template course-info.component.html
+
+
+
+criar nova rota que irá trigar o componente
+em app-module.ts
+
+
+{
+	path: 'course/info/:id', component: CouseInfoComponent	
+}
+
+
+declarar dentro do @NgModule
+
+CouseInfoComponent
+
+
+
+dentro do course-info.component.ts
+
+
+@Component({
+	templateUrl: './course-info.component.html'
+
+})
+
+
+export class CouseInfoComponent OnInit{
+	courseId: number;
+
+	constructor(private activatedRoute: ActivatedRoute)
+
+	ngOnInit(): void{
+	this.courseId = +this.activatedRoute.snapshot.paramMap.get('id');
+}
+}//inserimos o OnInit
+
+
+no template:
+
+<h2>Course Id = {{ courseId }}</h2>
+
+
+Realizar alterações no nav-bar para deixar mais dinâmico
+
+no primeiro href entra [routerLink]="['/courses']"
+
+no ultimo href entra 
+[routerLink]="['/courses']"
+
+
+na página o botão courses não fica ativo então precisamos ativar em nav-bar
+
+routerLinkActive="active"
+
+
+
