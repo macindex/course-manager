@@ -1,0 +1,112 @@
+Passando atributo de rota e editar o mesmo:
+
+
+course-info.component.html
+
+apagar tudo
+
+inserir
+
+<h2>Course info</h2>
+
+<hr/>
+
+<form>
+
+</form>
+
+
+Agora será editado
+
+course-info.component.ts
+
+
+criar método
+
+
+course.service.ts
+
+após
+
+retrieveAll():
+
+inserir
+
+retrieveById(id: number):Course{
+	return COURSES.find((courseItereator: Course) => courseItereator.id === id);
+}
+
+
+
+Agora
+
+
+dentro de: 
+course-info.component.ts
+
+após: export class
+
+alterar "courseId" para
+
+course: Course;
+
+depois
+
+em this.courseId 
+
+será
+
+this.course
+
+deve ser importado lá emcima
+
+import { Course } from './course';
+
+
+dentro do constructor após ActivatedRouter, private courseService: CourseService
+
+
+depois em:
+
+this.course = this.courseService.retrieveById(+this.activatedRoute)
+
+
+voltando ao:
+
+course-info.component.html
+
+
+
+
+
+
+
+<form #coureeForm="ngForm">
+
+
+copiado a div de course-list.component.html e colocado abaixo do form
+
+
+<div class="form-group row">
+	<label class="col-sm-2 col-form-label">Name:</label>
+    
+    <div class="col-sm-10">
+        <input [(ngModel)]="course.name" required name="name" #courseName="ngModel" [ngclass]="{'is-invalid': courseName.invalid}" class="form-control">
+	{{ courseName.value }}
+	{{ courseName.valid }}
+    </div>
+</div>
+
+
+testar...
+
+
+
+
+
+
+
+
+
+
+

@@ -32,7 +32,7 @@ import { CouseInfoComponent } from './courses/course-info.component';
       path: 'courses', component: CourseListComponent
       },
       {
-        path: 'course/info/:id', component: CouseInfoComponent	
+        path: 'courses/info/:id', component: CouseInfoComponent	
       },
       {
 	    path: '**', component: Error404Component
