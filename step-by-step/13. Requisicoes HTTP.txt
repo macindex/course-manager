@@ -139,3 +139,10 @@ if(course.id){
 
 caso apos estas operações não seja inserido o subscribe dentro de course-info.component.ts não sera realizada a alteração
 
+então:
+
+"course-info.component.ts"
+
+save(): void{
+		this.courseService.save(this.course).subscribe;
+	}

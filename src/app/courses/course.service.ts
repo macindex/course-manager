@@ -2,8 +2,6 @@ import { Course } from './course';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
 
 
 @Injectable({ //Decorator
@@ -32,6 +30,9 @@ export class CourseService {
         }else{
             return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
         }
+    }
+    deleteById(id: number): Observable<any>{
+        return this.httpClient.delete<any>(`${this.coursesUrl}/${id}`);
     }
     
 }
