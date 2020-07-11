@@ -9,7 +9,7 @@ import { CourseService } from './course.service';
 })
 
 
-export class CouseInfoComponent implements OnInit{
+export class CourseInfoComponent implements OnInit{
 	
 	course: Course;
 

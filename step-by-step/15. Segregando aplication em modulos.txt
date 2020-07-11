@@ -1,0 +1,49 @@
+Segregando semelhante uma casa
+
+a ideia é segregar responsabilidades
+
+em "course"
+
+criamos um file  "course.module.ts"
+
+import { NgModule } from '@angular/core';
+
+@NgModule({
+	declarations: [
+	CourseListComponent,
+	CourseInfoComponents
+	], imports: [
+		RouterModule.forChild([
+	{
+      path: '', redirectTo: 'courses', pathMatch: 'full' //será passado vazio
+      },
+      {
+      path: 'courses', component: CourseListComponent
+      },
+	])
+	]
+})
+
+
+export class CourseModule {
+
+}
+
+em "app.module.ts"
+
+imports:
+CourseModule,
+
+
+
+Excluido das declarations em "app.module.ts"
+
+CourseInfoComponent
+CourseListComponent
+
+
+
+
+
+
+
