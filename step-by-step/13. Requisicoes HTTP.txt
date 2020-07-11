@@ -1,0 +1,141 @@
+Fazendo requisições no backend
+
+Backend em nodejs
+ 
+inserido em assets dir "server" e "course-manager-server"
+
+inserido em "server/course-..."
+
+package.json
+serve.js
+
+dentro de serve.js conta a porta q esta sendo ouvida
+
+-node serve.js // comando q estarta o server
+
+dentro de "course.service.ts" encontra-se o "retrieveAll()" responsável por trazer todos os cursos para o componente de lista
+
+importar módulo http dentro de "app.module.ts"
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+dentro de imports:
+HttpClientModule 
+
+
+Dentro de "course.service.ts" injetamos módulo HttpClient
+
+private courseUrl: string = 'http://localhost:3100/api/courses';
+// após string pegamos dentro de serve.js "'/api/couses'"
+
+constructor(private httpCliente: HttpCliente) { }
+
+// importante notar que devemos importar do /common/http
+
+
+retrieveAll(): Observable<Course[]>{
+	return this.httpClient.get<Course[]>(this.coursesUrl);
+}
+
+
+
+
+Agora em "course-list.component.ts" após noOnInit o this.course começa a apresentar erro então
+
+}
+// inserimos
+
+retrieveAll(): void{
+	// aqui entra o ngOnInit
+	this._courses = this.courseService.retrieveAll();
+        this.filteredCourses = this._courses;
+}
+
+Agora será alterado o "retrieveAll"
+
+this.courseService.retrieveAll().subscribe({
+	next: courses => {
+	this._courses = courses;
+	this.filteredCourses = this._courses;
+	}
+});
+        this.filteredCourses = this._courses;
+
+
+
+apagamos o que vem após ngOnInit()
+
+ficará assim:
+
+this.retrieveAll();
+
+dentro do retorno do subscribe temos outro callback function
+
+
+retrieveAll(): void{
+        // aqui entra o ngOnInit
+        this.courseService.retrieveAll().subscribe;({
+            next: courses => {
+                this._courses = courses;
+                this.filteredCourses = this._courses;
+        },
+	error: err => console.log('Error', err)
+	})
+}
+
+Agora trabalhamos sobre o Edit
+
+em "course.service.ts"
+
+No retrieveById(id: number)
+
+return será agora this.httpClient.get<Course>[`${this.cousesUrl}/${id}`];
+
+
+em retrieveAll(): Observable<Course[]>{
+        return this.httpCliente.get<Course[]>(this.coursesUrl);
+    }
+
+// Ficará desta forma
+
+Agora alteramos em "course-info.component.ts" em ngOnInit
+
+fica: this.courseService.retrieveById()...get('id')).subscribe({
+	next: course => ths.course = course,
+	error: err => console.log('Error', err)
+}); 
+
+
+em "course-info.component.html"
+
+<form #courseForm="ngForm">
+
+vira 
+
+<form #courseForm="ngForm" *ngIf="course">
+
+
+em "course.service.ts" alteramos o save
+
+save(course: Course): Observable
+
+if(course.id){
+	return this.httpClient.put<Course>(`${this.courseUrl}/${course.id}`, course);
+}
+
+
+
+
+
+
+ save(course: Course): Observable<Course>{
+        if(course.id){
+            return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course);
+        }else{
+            return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
+        }
+
+
+caso apos estas operações não seja inserido o subscribe dentro de course-info.component.ts não sera realizada a alteração
+

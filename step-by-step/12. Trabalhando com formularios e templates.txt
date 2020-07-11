@@ -131,7 +131,70 @@ variável de template
 
 
 
+<div class="col-sm-10">
+        <input [(ngModel)]="course.rating" required name="rating" #courseRating="ngModel" [ngClass]="{'is-invalid': courseRating.invalid}" class="form-control">
+	<div class="invalid-feedback">
+    	<span>Course rating is required</span>
+   	</div>
+    </div>
+</div>
 
 
+<div class="col-sm-10">
+        <input [(ngModel)]="course.description" required name="description" #courseDescription="ngModel" [ngClass]="{'is-invalid': courseDescription.invalid}" class="form-control">
+	<div class="invalid-feedback">
+    	<span>Course description is required</span>
+   	</div>
+    </div>
+</div>
 
 
+Adicionado dois botões de salvar e voltar
+
+<button class"btn btn-primary mr-2">Save</button>
+<button class"btn btn-secondary mr-2">Back</button>
+
+
+Agora será verificado se o form como um todo esta válido
+
+
+<button [disabled]="courseForm.invalid"class"btn btn-primary mr-2">Save</button>
+<button class"btn btn-secondary mr-2">Back</button>
+
+chamar ação (click)(save)
+
+
+dentro de course-info.component.ts
+
+
+}
+save(): void{
+{
+
+
+em course.service.ts
+
+
+depois de retrieveAll()
+
+}
+save(course: Course): void{
+	if(course.id){
+	const index = COURSE.findIndex((courseIterator: Course) => courseIterator.id === course.id);
+	COURSE[index] = course;
+}
+}
+
+
+course-info.component.ts
+
+save(): void{
+	this.courseService.save(this.course);
+}
+
+
+Criar rota para voltar a lista de cursos
+
+
+<button [routerLink]="['/courses']"
+ class"btn btn-secondary mr-2">Back</button>

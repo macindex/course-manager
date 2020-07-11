@@ -5,7 +5,7 @@ import { CourseService } from './course.service';
 
 @Component({
     //selector: 'app-course-list',
-    templateUrl: './course-info.component.html'
+    templateUrl: './course-list.component.html'
     //template: '<h2> Course list</h2>'
 })
 
@@ -17,9 +17,18 @@ export class CourseListComponent implements OnInit {
     constructor(private courseService: CourseService){ }
 
     ngOnInit(): void{
-        this._courses = this.courseService.retrieveAll();
-        this.filteredCourses = this._courses;
+        this.retrieveAll();
     }
+    retrieveAll(): void{
+        // aqui entra o ngOnInit
+        this.courseService.retrieveAll().subscribe({
+            next: courses => {
+                this._courses = courses;
+                this.filteredCourses = this._courses;
+        }
+    })
+        
+    } 
 
         set filter(value: string){
 	    this._filterBy = value;
