@@ -1,0 +1,39 @@
+shared modulos
+
+em "app" criamos o dir "shared"
+
+será criada para compartilhar componentes genericos
+
+dentro de shared/component outro dir
+
+outro dir pipe
+
+componente de star para "component"
+
+
+dentro de "star" criamos
+
+star.module.ts
+
+import { NgModule} from '@angular/core';
+
+@NgModule{
+	declarations:[
+		StarComponent
+	],
+	exports:[
+		StarComponent
+	
+	]
+// serve p dizer ao angular que queremos expotar alguma coisa deste módulo	
+		
+}
+
+export class StarModule{
+
+}
+
+dentro do "course.module.ts" excluimos o StarComponent
+
+
+node serve.js // starta o server

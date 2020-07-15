@@ -42,6 +42,10 @@ CourseInfoComponent
 CourseListComponent
 
 
+importado em "course.module.ts"
+
+FormsModule,
+
 
 
 
