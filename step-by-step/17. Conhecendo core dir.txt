@@ -1,0 +1,68 @@
+Pasta core temos components mais pesados, maior armação com outros components ex: nav-bar
+
+
+pasta "core" dentro de "app" e "component" dentro de "core"
+
+e arrastar o "nav-bar" para dentro do "component"
+
+"core.module.ts" criado em "core"
+
+
+import { NgModule } from '@angular/core';
+import { NavBarModule } from '.component/nav-bar.component';
+
+@NgModule({
+	declarations: [
+		NavBarComponent
+	]
+	exports: [
+		NavBarComponent
+	]
+})
+
+export class CoreModule{
+
+}
+
+será excluido "NavBarComponent" dentro de app.component.html
+
+
+será excluido dentro de app.module.ts, em declarations
+
+em imports será importado CoreModule
+
+--- Até aqui ele necessita importar o módulo de rotas
+
+dentro de core.module.ts ficará
+
+
+import { NgModule } from '@angular/core';
+import { NavBarModule } from '.component/nav-bar.component';
+
+@NgModule({
+	declarations: [
+		NavBarComponent
+	],
+	imports: [
+		RouterModule
+	]
+	exports: [
+		NavBarComponent
+	]
+})
+
+export class CoreModule{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

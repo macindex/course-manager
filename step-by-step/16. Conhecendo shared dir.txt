@@ -37,3 +37,30 @@ dentro do "course.module.ts" excluimos o StarComponent
 
 
 node serve.js // starta o server
+
+Até aqui funciona todo layout e segregado
+
+dentro da pasta pipe serão criados todos os módulos da pasta pipe
+
+criado arquivo "app-pipe.module.ts"
+
+
+import { NgModule } from '@angular/core';
+import { ReplacePipe } from '../pipes/replace.pipe'; 
+
+@NgModule({
+	declarations: [
+		ReplacePipe
+],
+	exports: [
+		ReplacePipe	
+	]
+
+})
+
+export class AppPipeModule{
+
+}
+
+
+em course.module.ts será excluido ReplacePipe
