@@ -1,0 +1,6 @@
+TRabalhando sobre o erro404
+
+Primeiro pegamos a rota dele e jogamos dentro de "component" no "core"
+
+
+

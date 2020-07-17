@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 //import { ReplacePipe } from './pipe/replace.pipe';
 import { RouterModule } from '@angular/router';
 //import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { Error404Component } from './error-404/error-404.component';
+//import { Error404Component } from './error-404/error-404.component';
 import { CourseModule } from './courses/course.module';
 import { CoreModule } from './core/core.module';
 //import { CourseInfoComponent } from './courses/course-info.component';
@@ -21,7 +21,7 @@ import { CoreModule } from './core/core.module';
   
     
     //NavBarComponent,
-    Error404Component
+    //Error404Component
     
   ],
   imports: [
@@ -29,13 +29,9 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     HttpClientModule,
     CourseModule,
-    RouterModule.forRoot([
-      
+    RouterModule.forRoot([      
       {
         path: '', redirectTo: 'courses', pathMatch: 'full'
-      },
-      {
-	    path: '**', component: Error404Component
       }
     ])
   ],
