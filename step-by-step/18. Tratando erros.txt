@@ -2,5 +2,23 @@ TRabalhando sobre o erro404
 
 Primeiro pegamos a rota dele e jogamos dentro de "component" no "core"
 
+dentro de app.module.ts
+
+{
+	path: '**' // recortamos e colocamos em core.module.ts
+}
+
+em: imports vai ficar
 
 
+imports: [
+	RouterModule.forChild([
+	{
+	    path: '**', component: Error404Component
+      }
+	
+])
+]
+
+
+caso seja excluido o import e declaration no app.module apresentará erro, sendo necessário declarar no core.module.ts Error404Component
